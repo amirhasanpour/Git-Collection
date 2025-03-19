@@ -1,0 +1,294 @@
+git help command => explain about the command
+
+
+git init => initialize git in the directory folder and make a repository
+
+
+git status => Show the status
+
+
+git add file_name => add file_name file in repository to stage or add new files in directory into repository and stage
+
+
+git add . => add all the file and directory that changed in current directory into the stage 
+
+
+git add -A => add all the file that changed into the stage
+
+
+git add "page*" => add just new files to the stage
+
+
+git rm --cached file_name => remove file_name file from stage
+
+
+git rm file_name => remove the file_name from git and system
+
+
+git commit -m "message" => commit the files in stage state with description message
+
+
+git commit -am "message" => add all the file that changed into the stage and commit them with description message
+
+
+git commit --amend => open the defulte editor and change the last commit
+
+
+git commit --amend -m "New commit message" => change the commit message of the last commit
+
+
+git config --global user.email "user_email" => config user email
+
+
+git config --global user.name "user_name" => config user name
+
+
+git config --global user.signingkey password_key => set a new password_key for git (signature)
+
+
+git config user.email => show user email that have been set before
+
+
+git config user.name => show user name that have been set before
+
+
+git log => show the commits history and details (then you can enter q for quit)
+
+
+git log --oneline => show the commits history and details (each in one line and shorter format)
+
+
+git log --all --graph => show the commits history and details for all branches
+
+
+git log --oneline --all --graph => show the commits history and details for all branches with graphical interface
+
+
+website: gitignore.io => generate a gitignore file for your project framework
+
+
+touch .gitignore (only execute in linux) => create .gitignore file for your project
+
+
+git branch => show all of the branches and the current branch
+
+
+git branch branch_name => create a branch that named branch_name
+
+
+git switch branch_name => switch to the branch_name branch
+
+
+git switch -c branch_name => create a branch that named branch_name and switch to it
+
+
+git branch -m new_branch_name => change the branch name of the current branch to the new_branch_name
+
+
+git branch -d branch_name => delete branch_name branch (when branch has merged)
+
+
+git branch -D branch_name => delete branch_name branch (when branch has not merged)
+
+
+git merge branch_name => merge branch_name to the current branch
+
+
+git diff => show the difference between working directory and staging area
+
+
+git diff --staged => show the difference between stage and last commit
+
+
+git diff HEAD => show the difference between working directory and last commit
+
+
+git diff commit1_hash..commit2hash => show the difference between commit1 and commit2
+
+
+git diff tag_name1..tag_name2 => show the difference between commit with tag_name1 tag and commit with tag_name2 tag
+
+
+git diff branch1_name..branch2_name => show the difference between branch1 and branch2
+
+
+git checkout commit_hash => detach HEAD from current commit and attached it to the commit_hash commit (after you can use "git switch main_branch" to return the HEAD into the previous place)
+
+
+git checkout tag_name => detach HEAD from current commit and attached it to the commit that has tag_name tag (after you can use "git switch main_branch" to return the HEAD into the previous place)
+
+
+git checkout HEAD~integer_number => detach HEAD from current commit and attached it to the integer_number previous commit
+
+
+git checkout HEAD file_name => discard file_name file changes
+
+
+git checkout branch_name => switched to the branch_name branch
+
+
+git restore file_name => discard file_name file changes
+
+
+git restore --staged file_name => remove file_name from stage
+
+
+git restore --source commit_hash file_name => discard file_name changes from commit_hash commit
+
+
+git restore --source HEAD~integer_number file_name => discard file_name changes from integer_number previous commit
+
+
+git reset commit_hash => delete commits from the last to the commit_hash commit
+
+
+git reset --hard commit_hash => delete commits from the last to the commit_hash commit (also delete working directory changes)
+
+
+git reset file_name => remove the file_name from stage
+
+
+git revert commit_hash => create a new commit above all commits, with changes from commit_hash commit (after that, git ask you to resolve conflicts and use "git add .", then use "git revert --continue" to open the default editor and do the changes for continue the reverting)
+
+
+git stash => save and remove the changes from current branch
+
+
+git stash save "message_text" => save changes in stash and remove them from current branch with "message_text" message
+
+
+git stash pop => load the changes from stash and delete stash
+
+
+git stash apply => load the changes from stash
+
+
+git stash list => show all the stashes
+
+
+git stash apply stash@{stash_id} => load the stash with stash_id id from stashes
+
+
+git stash drop stash@{stash_id} => delete the stash with stash_id id from stashes
+
+
+git stash clear => delete all stashes
+
+
+git remote => show the remotes list (only names)
+
+
+git remote -v => show the remotes list (names and urls)
+
+
+git remote add url_name project_url_address => connect the project to the project_url_address address (address could be from github for example) to the current directory (url_name is usually named "origin", but you can have many remotes and choose a name for each of them)
+
+
+git push origin main_brach => push the main_branch into the origin
+
+
+git push -u origin main_brach => push the main_branch into the origin (--set-upstream)
+
+
+website: https://markdown-it.github.io/ => help for write a better README.md file for github repository
+
+
+git clone project_url_address => clone a project from the project_url_address address (address could be from github for example) to the current directory
+
+
+git branch -r => show remote branches
+
+
+git fetch origin main_brach => sync and update local repository with remote repository in main_brach branch
+
+
+git pull origin main_barch => sync, update and merge local repository with remote repository and working directory in main_brach branch
+
+
+git rebase branch_name => merge branch_name branch to the current branch with rebase it (change structure of branches)
+
+
+git rebase -i --root => open default editor and return all the last commits for every change that you want
+
+
+git rebase -i HEAD~integer_number => open default editor and return all the last commits from integer_number commit for every change that you want
+
+
+git rebase -i commit_hash => open default editor and return all the last commits from commit_hash commit for every change that you want
+
+
+git tag => show the tags
+
+
+git tag -l "v2*" => return all tags that include v2 in first and ever thing after that
+
+
+git show tag_name => show the tag_name tag, with details and messages
+
+
+git tag tag_name => give a lightweight tag with tag_name name, to the current commit (where the HEAD is)
+
+
+git tag -a tag_name => give a annotated tag (you can write a message for tag) with tag_name name, to the current commit (where the HEAD is)
+
+
+git tag tag_name commit_hash => give a lightweight tag with tag_name name, to the commit_hash commit
+
+
+git tag tag_name -a commit_hash => give a annotated tag with tag_name name, to the commit_hash commit
+
+
+git tag -f tag_name commit_hash => give a lightweight tag with tag_name name, to the commit_hash commit (when you want to give a tag from a commit to another commit)
+
+
+git tag -d tag_name => delete tag_name tag
+
+
+git push origin tag_name => push tag_name tag to origin
+
+
+git push origin --tag => push all the tags to origin
+
+
+git tag -a tag_name -m "tag_message" => create a tag_name tag with "tag_message" message
+
+
+git tag -v tag_name => show the tag_name tag with signature and details 
+
+
+git tag -s tag_name -m "tag_message" => create a tag with name tag_name and set a signiture with your key password. also set a message about the version description
+
+
+git blame file => show whose change the file in different times
+
+
+git blame file -L8,10 => show whose change the file in different times (line 8 to 10)
+
+
+git bisect start => start bisect for debuging
+
+
+git bisect bad => say to git that I have a problem (bug) in this state
+
+
+git bisect good commit_log => say to git that I did not have bug in this state (I did not have bug in this commit)
+
+
+git bisect good => say to git that I do not have a problem (bug) in this state
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
